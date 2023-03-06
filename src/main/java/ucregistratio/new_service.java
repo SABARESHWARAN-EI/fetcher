@@ -130,8 +130,11 @@ import java.io.IOException;
 						session.setAttribute("udate",date);
 						System.out.println("index");
 						System.out.println(urole);
-						//dispatcher = request.getRequestDispatcher("MyOrders");
-						response.sendRedirect("MyOrders");  
+						System.out.println(date);
+						System.out.println(u_time);
+						
+						dispatcher = request.getRequestDispatcher("MyOrders");
+					//	response.sendRedirect("MyOrders");  
 						dispatcher.forward(request, response);
 					}
 				}

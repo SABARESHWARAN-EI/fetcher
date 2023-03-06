@@ -56,6 +56,7 @@ public class Start extends HttpServlet {
 		String uname=(String) session.getAttribute("username");
 		String user_email=(String) session.getAttribute("user_email");
 		String user_mobile =(String) session.getAttribute(" user_mobile");
+		System.out.println("In start, user mobile is : "+user_mobile);
 //		
 //		String arrive=request.getParameter("arrive");
 //		String ready=request.getParameter("ready");
@@ -127,6 +128,7 @@ public class Start extends HttpServlet {
 		{
 			session.setAttribute("order_id",oid);
 	    	session.setAttribute("uemail",uemail);
+	    	session.setAttribute("user_mobile",user_mobile);
 	    	request.setAttribute("status","failed");
 	    	dispatcher = request.getRequestDispatcher("start.jsp");
 			dispatcher.forward(request, response);

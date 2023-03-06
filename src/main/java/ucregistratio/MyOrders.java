@@ -27,7 +27,7 @@ public class MyOrders extends HttpServlet {
 		HttpSession session = request.getSession();
 		RequestDispatcher dispatcher=null;
 		Connection con=null;
-
+		System.out.println(" In My Orders");
 		response.setContentType("text/html");  
 		PrintWriter out = response.getWriter();  
 		
@@ -61,7 +61,7 @@ public class MyOrders extends HttpServlet {
 				+ "</form>");
 		String uemail=(String)session.getAttribute("uemail");
 		String uid=(String)session.getAttribute("uid");
-		String udate=(String)session.getAttribute("udate");
+		//String udate=(String)session.getAttribute("udate");
 		System.out.println("the user id in my orders "+uid);
 		String status=null;
 		String btn = "Done";

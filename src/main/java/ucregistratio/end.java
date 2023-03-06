@@ -58,6 +58,7 @@ public class end extends HttpServlet {
 		String oid=(String)session.getAttribute("order_id");
 		String add_desc=request.getParameter("add_desc");
 		int add_amt=Integer.parseInt(request.getParameter("add_amount"));
+		String mobile = (String) session.getAttribute("user_mobile");
 //		
 //		String finished=request.getParameter("finished");
 //		String work=request.getParameter("work");
@@ -90,6 +91,7 @@ public class end extends HttpServlet {
 		    stm.setInt(3,add_amt);
 		    stm.setString(4, oid);
 		    System.out.println(date);
+		    System.out.println("in end page");
 		    row_count=stm.executeUpdate();
 		    
 		    if(row_count>0)
@@ -151,6 +153,7 @@ public class end extends HttpServlet {
 		    	session.setAttribute("order_id",oid);
 		    	session.setAttribute("uemail",uemail);
 		    	session.setAttribute("urole",role);
+		    	session.setAttribute("user_mobile", mobile);
 		    	session.setAttribute("uprovider",provider);
 		    	session.setAttribute("provider_id", provider_id);
 		    	session.setAttribute("udesc",desc);
